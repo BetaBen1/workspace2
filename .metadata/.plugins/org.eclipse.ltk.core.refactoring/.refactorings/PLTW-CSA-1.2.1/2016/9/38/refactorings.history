@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;nebulous.mediaLib&apos; to &apos;betaben.mediaLib&apos;&#x0D;&#x0A;- Original project: &apos;PLTW-CSA-1.2.1&apos;&#x0D;&#x0A;- Original element: &apos;PLTW-CSA-1.2.1/src/nebulous.mediaLib&apos;&#x0D;&#x0A;- Renamed element: &apos;PLTW-CSA-1.2.1/src/betaben.mediaLib&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;nebulous.mediaLib&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;nebulous.mediaLib" name="betaben.mediaLib" qualified="false" references="true" stamp="1473782875844" textual="false" version="1.0"/>
+</session>
