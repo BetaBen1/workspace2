@@ -6,13 +6,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-
-		
 		library.addMovie(new Movie("Ben is the best", 5.0, 12.00));
 		library.addMovie(new Movie("Ben is even better", 10.1, 360.00));
 		library.addSong(new Song("This song is AMAZING", 8.1, 0.89));
 		library.addSong(new Song("This song is MORE AMAZING", 9.99999, 0.99));
-		library.addBook(new Book("Im a book!", 12.5, 12345.00));
+		library.addBook(new Book("I'm a book!", 12.5, 12345.00));
 		
 		printLibrary();
 		
