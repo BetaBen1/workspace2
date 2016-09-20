@@ -1,0 +1,10 @@
+package betaben.mediaLib;
+
+public class ArrayMediaLib {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -6,6 +6,11 @@ public class Song {
 	private double rating;
 	private double price;
 	
+	public Song(String name){
+		this.name = name;
+		this.rating = this.price = 0;
+	}
+	
 	public Song(String name, double rating, double price){
 		this.name = name;
 		this.rating = rating;
