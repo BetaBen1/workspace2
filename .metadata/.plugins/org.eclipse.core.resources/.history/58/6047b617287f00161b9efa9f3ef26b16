@@ -1,7 +1,5 @@
 package betaben.mediaLib;
 
-import java.util.ArrayList;
-
 public class MediaController {
 	
 	/* 	MEDIA CONTROLLER CLASS
@@ -19,18 +17,16 @@ public class MediaController {
 		// First gain access to your songs.
 		// Either create songs here or create an instance of your ArrayList from MediaLib
 		
-		ArrayList<Song>	songs = new ArrayList<Song>();
 		
-		songs.add(new Song("This song", 1, 4));
-		songs.add(new Song("This other song", 1, 4));
-		songs.add(new Song("Another song", 1, 4));
+		
+
 		
 		// Create a for loop that will write your song data to "mymedia.txt"
 		// Use a for loop to save the data to disk using MediaWriter.write();
 		
-		for(Song song : songs) {
-			MediaWriter.write(song.getName() + "; " + song.getRating() + "; " + song.getPrice());
-		}
+		
+		
+
 		
 		
 		// Now create a method to read the song data from "mymedia.txt" back to RAM
