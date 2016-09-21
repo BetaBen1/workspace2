@@ -40,10 +40,40 @@ public class ArrayMediaLib {
                 new Song("Hey Jude"),
                 };
 		
-		for (Song s: topTenSongs)
+		/*for (Song songs: topTenSongs)
 		{
-		    System.out.println(s.getName());
+		    System.out.println(songs.getName());
+		}*/
+		
+		/*System.out.println("\n—BEFORE--");
+        for (Song changeSong : topTenSongs) { 
+            System.out.println(changeSong.getName());
+        	changeSong.setName("test");
+        }*/
+        
+        /*for (Song changeSong: topTenSongs) {
+            changeSong = new Song("test");
+            System.out.println(changeSong.getName());
+        }*/
+        
+        // show the array
+		
+		for(int i=0; i < topTenSongs.length; i++) {
+			topTenSongs[i].setPrice(2.99);
 		}
+		
+		for(int i=0; i < topTenSongs.length; i+=3) {
+			topTenSongs[i].setPrice(topTenSongs[i].getPrice()-.99);
+		}
+		
+        //System.out.println("\n—AFTER--");
+        /*for (Song showSong : topTenSongs) {
+            System.out.println(showSong.getName() + "; " + showSong.getPrice());
+        }*/
+        
+        for(int i=0; i < topTenSongs.length/2; i++){
+        	System.out.println(topTenSongs[i].getName());
+        }
 		
 		
 	}
