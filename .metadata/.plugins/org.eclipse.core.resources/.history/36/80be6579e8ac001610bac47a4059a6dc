@@ -1,0 +1,10 @@
+package com.betaben.animalactivity;
+
+public abstract class Duck extends Animal {
+
+	@Override
+	public String say() {
+		return("quack");
+	}
+	
+}

@@ -1,0 +1,15 @@
+package com.betaben.animalactivity;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Duck duck = new Duck();
+		Fish fish = new Fish();
+		System.out.println("Duck says: "+duck.say());
+		System.out.println("Fish says: "+fish.say());
+		
+		
+	}
+
+}
