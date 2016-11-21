@@ -1,0 +1,49 @@
+package com.betaben.animalactivity;
+
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JFrame frame = new JFrame();
+		frame.setLayout(null);
+		frame.setResizable(false);
+		frame.setSize(500, 500);
+		
+		ImageIcon image = new ImageIcon("Users/Ben/Downloads/IMG_4182.JPG");
+		JLabel label = new JLabel(image);
+		label.setBounds(20, 20, 20, 20);
+		label.setVisible(true);
+		
+		Duck duck = new Duck();
+		Fish fish = new Fish();
+		Seal seal = new Seal();
+		Fox fox = new Fox();
+		
+		ArrayList<Animal> animals = new ArrayList<Animal>();
+		animals.add(duck);
+		animals.add(fish);
+		animals.add(seal);
+		animals.add(fox);
+		
+		for(Animal animal : animals){
+			System.out.println("The " + animal.getClass().getSimpleName() + " says " + animal.say());
+		}
+		
+		System.out.println(seal.play());
+		System.out.println(fox.play());
+		
+		frame.add(label);
+		
+		frame.setVisible(true);
+		
+	}
+
+}

@@ -1,0 +1,59 @@
+package com.betaben.animalactivity;
+
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JFrame frame = new JFrame();
+		frame.setLayout(null);
+		frame.setResizable(false);
+		frame.setSize(600, 600);
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		
+		JButton duckButton = new JButton();
+		duckButton.setBounds(10, 10, 50, 50);
+		duckButton.setVisible(true);
+		
+		JButton fishButton = new JButton();
+		fishButton.setBounds(10, 60, 50, 50);
+		fishButton.setVisible(true);
+		
+		JButton sealButton = new JButton();
+		sealButton.setBounds(10, 110, 50, 50);
+		sealButton.setVisible(true);
+		
+		JButton foxButton = new JButton();
+		foxButton.setBounds(10, 160, 50, 50);
+		foxButton.setVisible(true);
+		
+		Duck duck = new Duck();
+		Fish fish = new Fish();
+		Seal seal = new Seal();
+		Fox fox = new Fox();
+		
+		ArrayList<Animal> animals = new ArrayList<Animal>();
+		animals.add(duck);
+		animals.add(fish);
+		animals.add(seal);
+		animals.add(fox);
+		
+		for(Animal animal : animals){
+			System.out.println("The " + animal.getClass().getSimpleName() + " says " + animal.say());
+		}
+	
+		frame.add(duckButton);
+		frame.add(fishButton);
+		frame.add(sealButton);
+		frame.add(foxButton);
+		
+		frame.setVisible(true);
+		
+	}
+
+}

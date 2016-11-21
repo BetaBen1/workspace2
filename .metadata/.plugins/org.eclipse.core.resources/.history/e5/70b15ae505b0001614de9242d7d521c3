@@ -9,18 +9,20 @@ public class Main {
 		Duck duck = new Duck();
 		Fish fish = new Fish();
 		Seal seal = new Seal();
-		System.out.println("Duck says: "+duck.say());
-		System.out.println("Fish says: "+fish.say());
-		System.out.println("Seal says: "+seal.say());
+		Fox fox = new Fox();
 		
 		ArrayList<Animal> animals = new ArrayList<Animal>();
 		animals.add(duck);
 		animals.add(fish);
 		animals.add(seal);
+		animals.add(fox);
 		
-		for(int i=0; i<animals.size(); i++){
-			System.out.println(animal[i]);
+		for(Animal animal : animals){
+			System.out.println("The " + animal.getClass().getSimpleName() + " says " + animal.say());
 		}
+		
+		System.out.println(seal.play());
+		System.out.println(fox.play());
 		
 	}
 
