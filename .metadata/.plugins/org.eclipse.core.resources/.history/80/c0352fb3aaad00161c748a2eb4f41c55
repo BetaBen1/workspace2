@@ -1,7 +1,0 @@
-package com.betaben.animalactivity;
-
-public abstract class Fun {
-
-	public abstract String play();
-	
-}

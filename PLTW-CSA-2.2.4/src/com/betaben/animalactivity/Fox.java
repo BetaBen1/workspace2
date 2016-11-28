@@ -2,6 +2,11 @@ package com.betaben.animalactivity;
 
 public class Fox extends Animal implements Fun, Fly, Swim {
 
+	public Fox(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String say(){
 		return("Ring-ding-ding-ding-dingeringeding");
@@ -20,6 +25,11 @@ public class Fox extends Animal implements Fun, Fly, Swim {
 	@Override
 	public String swim(){
 		return("The fox can swim.");
+	}
+	
+	@Override
+	public String getAnimalName() {
+		return("fox");
 	}
 	
 }

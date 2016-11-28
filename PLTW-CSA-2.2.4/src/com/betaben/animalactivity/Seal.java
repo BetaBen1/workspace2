@@ -2,6 +2,11 @@ package com.betaben.animalactivity;
 
 public class Seal extends Animal implements Fun, Fly, Swim {
 
+	public Seal(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String say() {
 		return("ort ort");
@@ -20,6 +25,11 @@ public class Seal extends Animal implements Fun, Fly, Swim {
 	@Override
 	public String swim(){
 		return("The seal can swim.");
+	}
+	
+	@Override
+	public String getAnimalName() {
+		return("seal");
 	}
 	
 }
