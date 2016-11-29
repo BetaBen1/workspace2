@@ -96,7 +96,6 @@ public class Main extends JFrame {
 				submit();
 			}
 		});
-		contentPane.add(submitBtn);
 		
 		contentPane.addKeyListener(new KeyListener() {
 			@Override
@@ -116,6 +115,7 @@ public class Main extends JFrame {
 				}
 			}
 		});
+		contentPane.add(submitBtn);
 		
 	}
 	
