@@ -3,8 +3,6 @@ package com.betaben.collegeapp;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -54,77 +52,56 @@ public class Main extends JFrame {
 		contentPane.setLayout(null);
 		
 		firstNameTxt = new JTextField();
-		firstNameTxt.setBounds(124, 6, 320, 30);
+		firstNameTxt.setBounds(263, 16, 130, 26);
 		contentPane.add(firstNameTxt);
 		firstNameTxt.setColumns(10);
 		
 		lastNameTxt = new JTextField();
-		lastNameTxt.setBounds(124, 42, 320, 30);
+		lastNameTxt.setBounds(244, 54, 130, 26);
 		contentPane.add(lastNameTxt);
 		lastNameTxt.setColumns(10);
 		
 		ageTxt = new JTextField();
-		ageTxt.setBounds(124, 78, 320, 30);
+		ageTxt.setBounds(202, 103, 130, 26);
 		contentPane.add(ageTxt);
 		ageTxt.setColumns(10);
 		
 		GPATxt = new JTextField();
-		GPATxt.setBounds(124, 114, 320, 30);
+		GPATxt.setBounds(212, 132, 130, 26);
 		contentPane.add(GPATxt);
 		GPATxt.setColumns(10);
 		
 		JLabel firstNameLbl = new JLabel("First Name:");
-		firstNameLbl.setBounds(6, 6, 215, 30);
+		firstNameLbl.setBounds(150, 21, 82, 16);
 		contentPane.add(firstNameLbl);
 		
 		JLabel lastNameLbl = new JLabel("Last Name:");
-		lastNameLbl.setBounds(6, 42, 203, 30);
+		lastNameLbl.setBounds(150, 54, 82, 16);
 		contentPane.add(lastNameLbl);
 		
 		JLabel ageLbl = new JLabel("Age:");
-		ageLbl.setBounds(6, 78, 203, 30);
+		ageLbl.setBounds(150, 108, 72, 16);
 		contentPane.add(ageLbl);
 		
 		JLabel GPALbl = new JLabel("GPA:");
-		GPALbl.setBounds(6, 114, 203, 30);
+		GPALbl.setBounds(148, 137, 61, 16);
 		contentPane.add(GPALbl);
 		
 		JButton submitBtn = new JButton("Submit");
-		submitBtn.setBounds(6, 202, 438, 70);
+		submitBtn.setBounds(16, 176, 117, 29);
 		submitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				submit();
-			}
-		});
-		
-		contentPane.addKeyListener(new KeyListener() {
-			public void keyPressed(KeyEvent e){
-				if(e.getKeyCode()==(KeyEvent.VK_ENTER)){
-						submit();
-				}
-			}
-			public void keyReleased(KeyEvent e){
-				
-			}
-			public void keyTyped(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER){
-					submit();
-				}
+				firstName = firstNameTxt.getText();
+				lastName = lastNameTxt.getText();
+				age = ageTxt.getText();
+				GPA = GPATxt.getText();
+				System.out.println("First Name: " + firstName);
+				System.out.println("Last Name: " + lastName);
+				System.out.println("Age: " + age);
+				System.out.println("GPA: " + GPA);
 			}
 		});
 		contentPane.add(submitBtn);
 		
 	}
-	
-	public void submit(){
-		firstName = firstNameTxt.getText();
-		lastName = lastNameTxt.getText();
-		age = ageTxt.getText();
-		GPA = GPATxt.getText();
-		System.out.println("First Name: " + firstName);
-		System.out.println("Last Name: " + lastName);
-		System.out.println("Age: " + age);
-		System.out.println("GPA: " + GPA);
-	}
-	
 }

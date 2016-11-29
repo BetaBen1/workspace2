@@ -96,20 +96,16 @@ public class Main extends JFrame {
 				submit();
 			}
 		});
-		
-		contentPane.addKeyListener(new KeyListener() {
+		submitBtn.addKeyListener(new KeyListener() {
 			public void keyPressed(KeyEvent e){
-				if(e.getKeyCode()==(KeyEvent.VK_ENTER)){
-						submit();
-				}
+				submit();
 			}
 			public void keyReleased(KeyEvent e){
 				
 			}
 			public void keyTyped(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER){
-					submit();
-				}
+				submit();
+				
 			}
 		});
 		contentPane.add(submitBtn);

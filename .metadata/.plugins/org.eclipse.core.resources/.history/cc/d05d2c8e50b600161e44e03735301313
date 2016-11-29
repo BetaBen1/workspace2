@@ -3,8 +3,6 @@ package com.betaben.collegeapp;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -93,38 +91,17 @@ public class Main extends JFrame {
 		submitBtn.setBounds(6, 202, 438, 70);
 		submitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				submit();
-			}
-		});
-		
-		contentPane.addKeyListener(new KeyListener() {
-			public void keyPressed(KeyEvent e){
-				if(e.getKeyCode()==(KeyEvent.VK_ENTER)){
-						submit();
-				}
-			}
-			public void keyReleased(KeyEvent e){
-				
-			}
-			public void keyTyped(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER){
-					submit();
-				}
+				firstName = firstNameTxt.getText();
+				lastName = lastNameTxt.getText();
+				age = ageTxt.getText();
+				GPA = GPATxt.getText();
+				System.out.println("First Name: " + firstName);
+				System.out.println("Last Name: " + lastName);
+				System.out.println("Age: " + age);
+				System.out.println("GPA: " + GPA);
 			}
 		});
 		contentPane.add(submitBtn);
 		
 	}
-	
-	public void submit(){
-		firstName = firstNameTxt.getText();
-		lastName = lastNameTxt.getText();
-		age = ageTxt.getText();
-		GPA = GPATxt.getText();
-		System.out.println("First Name: " + firstName);
-		System.out.println("Last Name: " + lastName);
-		System.out.println("Age: " + age);
-		System.out.println("GPA: " + GPA);
-	}
-	
 }
