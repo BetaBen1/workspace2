@@ -9,4 +9,6 @@
 <fullyQualifiedTypeName name="com.betaben.animalactivity.Main"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+<fullyQualifiedTypeName name="com.betaben.collegeapp.DataHandler"/>
+<fullyQualifiedTypeName name="nebulous.tools.DataHandler"/>
 </qualifiedTypeNameHistroy>
