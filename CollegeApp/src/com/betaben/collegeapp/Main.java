@@ -1,5 +1,6 @@
 package com.betaben.collegeapp;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import nebulous.tools.DataHandler;
+import javax.swing.JScrollPane;
 
 public class Main extends JFrame {
 
@@ -26,6 +28,7 @@ public class Main extends JFrame {
 	private JTextField lastNameTxt;
 	private JTextField ageTxt;
 	private JTextField GPATxt;
+	JScrollPane scrollPane = new JScrollPane();
 	
 	public String firstName;
 	public String lastName;
@@ -54,7 +57,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 650, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -93,17 +96,8 @@ public class Main extends JFrame {
 		GPALbl.setBounds(6, 114, 203, 30);
 		contentPane.add(GPALbl);
 		
-		displayLbl.setBounds(6, 156, 438, 40);
+		displayLbl.setBounds(6, 289, 438, 51);
 		contentPane.add(displayLbl);
-		
-		JButton submitBtn = new JButton("Submit");
-		submitBtn.setBounds(6, 202, 438, 70);
-		submitBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				submit();
-			}
-		});
-		contentPane.add(submitBtn);
 		
 		contentPane.addKeyListener(new KeyListener() {
 			@Override
@@ -124,7 +118,25 @@ public class Main extends JFrame {
 			}
 		});
 		
+		scrollPane.setBounds(456, 6, 188, 416);
+		contentPane.add(scrollPane);
+		
+		JButton submitBtn = new JButton("Submit");
+		submitBtn.setBounds(6, 352, 438, 70);
+		submitBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				FamilyMemberPanel panel = new FamilyMemberPanel(firstNameTxt.getText(), lastNameTxt.getText(), ageTxt.getText(), GPATxt.getText());
+				panel.setVisible(true);
+				scrollPane.add(panel);
+				contentPane.revalidate();
+				contentPane.repaint();
+			}
+		});
+		contentPane.add(submitBtn);
+		
 		contentPane.getRootPane().setDefaultButton(submitBtn);
+		
+		load();
 		
 	}
 	
@@ -138,5 +150,12 @@ public class Main extends JFrame {
 		DataHandler.save("Last Name", "./res/text.txt", lastName);
 		DataHandler.save("Age", "./res/text.txt", age);
 		DataHandler.save("GPA", "./res/text.txt", GPA);
+	}
+	
+	public void load(){
+		firstNameTxt.setText((String)DataHandler.read("First Name", "./res/text.txt"));
+		lastNameTxt.setText((String)DataHandler.read("Last Name", "./res/text.txt"));
+		ageTxt.setText((String)DataHandler.read("Age", "./res/text.txt"));
+		GPATxt.setText((String)DataHandler.read("GPA", "./res/text.txt"));
 	}
 }

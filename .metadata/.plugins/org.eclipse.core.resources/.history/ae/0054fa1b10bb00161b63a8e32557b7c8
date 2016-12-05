@@ -1,0 +1,31 @@
+package com.betaben.collegeapp;
+
+import java.awt.Color;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+public class FamilyMemberPanel extends JPanel {
+	
+	public FamilyMemberPanel(String firstName, String lastName, String age, String gpa) {
+		
+		JLabel lblFirstname = new JLabel(firstName);
+		add(lblFirstname);
+		
+		JLabel lblLastName = new JLabel(lastName);
+		add(lblLastName);
+		
+		JLabel lblAge = new JLabel(age);
+		add(lblAge);
+		
+		JLabel lblGpa = new JLabel(gpa);
+		add(lblGpa);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 410, 30);
+		panel.setVisible(true);
+		
+	}
+
+}

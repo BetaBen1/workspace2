@@ -1,0 +1,14 @@
+package com.betaben.collegeapp;
+
+import javax.swing.JPanel;
+
+public class FamilyMemberPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public FamilyMemberPanel() {
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.betaben.collegeapp;
+
+import javax.swing.JPanel;
+
+public class AddFamilyMember extends JPanel {
+
+	public void AddFamilyMember(String firstName, String lastName, String age, String gpa){
+		memberPanel = new 
+	}
+	
+}
