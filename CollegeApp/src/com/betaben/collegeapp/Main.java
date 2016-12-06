@@ -1,21 +1,21 @@
 package com.betaben.collegeapp;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 
 import nebulous.tools.DataHandler;
-import javax.swing.JScrollPane;
 
 public class Main extends JFrame {
 
@@ -99,26 +99,13 @@ public class Main extends JFrame {
 		displayLbl.setBounds(6, 289, 438, 51);
 		contentPane.add(displayLbl);
 		
-		contentPane.addKeyListener(new KeyListener() {
-			@Override
-			public void keyPressed(KeyEvent e){
-				if(e.getKeyCode()==(KeyEvent.VK_ENTER)){
-						submit();
-				}
-			}
-			@Override
-			public void keyReleased(KeyEvent e){
-				
-			}
-			@Override
-			public void keyTyped(KeyEvent e) {
-				if(e.getKeyCode()==KeyEvent.VK_ENTER){
-					submit();
-				}
-			}
-		});
+		JPanel scrollPanel = new JPanel();
+		scrollPanel.setPreferredSize(new Dimension(188, 1000));
+		scrollPanel.setLayout(null);
 		
 		scrollPane.setBounds(456, 6, 188, 416);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setViewportView(scrollPanel);
 		contentPane.add(scrollPane);
 		
 		JButton submitBtn = new JButton("Submit");
@@ -126,10 +113,16 @@ public class Main extends JFrame {
 		submitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				FamilyMemberPanel panel = new FamilyMemberPanel(firstNameTxt.getText(), lastNameTxt.getText(), ageTxt.getText(), GPATxt.getText());
-				panel.setVisible(true);
-				scrollPane.add(panel);
-				contentPane.revalidate();
+				panel.setForeground(Color.black);
+				scrollPanel.add(panel);
+				FamilyMemberPanel.yPos += panel.getHeight()+5;
+				scrollPanel.repaint();
+				scrollPanel.revalidate();
+				scrollPane.repaint();
+				scrollPane.revalidate();
 				contentPane.repaint();
+				contentPane.revalidate();
+				
 			}
 		});
 		contentPane.add(submitBtn);

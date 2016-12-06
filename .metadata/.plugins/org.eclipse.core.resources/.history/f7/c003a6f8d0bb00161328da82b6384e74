@@ -1,0 +1,37 @@
+package com.betaben.collegeapp;
+
+import java.awt.Color;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+
+public class FamilyMemberPanel extends JPanel {
+	
+	public static int yPos = 0;
+	
+	public FamilyMemberPanel(String firstName, String lastName, String age, String gpa) {
+		setBorder(new LineBorder(Color.black));
+		
+		setBackground(Color.WHITE);
+		setForeground(Color.black);
+		setBounds(0, yPos, 188, 50);
+		
+		JLabel lblFirstname = new JLabel(firstName);
+		add(lblFirstname);
+		
+		JLabel lblLastName = new JLabel(lastName);
+		add(lblLastName);
+		
+		JLabel lblAge = new JLabel(age);
+		add(lblAge);
+		
+		JLabel lblGpa = new JLabel(gpa);
+		add(lblGpa);
+
+		setVisible(true);
+		
+	}
+
+}

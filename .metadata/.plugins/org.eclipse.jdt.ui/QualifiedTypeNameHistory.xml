@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="com.betaben.collegeapp.DataHandler"/>
 <fullyQualifiedTypeName name="nebulous.tools.DataHandler"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="javax.swing.ScrollPaneConstants"/>
 </qualifiedTypeNameHistroy>
