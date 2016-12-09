@@ -12,12 +12,12 @@ import java.awt.Insets;
 
 public class FamilyMemberPanel extends JPanel {
 	
-	public static int yPos = 0;
+	public static int familyMemberYPos = 0;
 	
 	public FamilyMemberPanel(String firstName, String lastName, String age, String gpa) {
 		setBorder(new LineBorder(Color.black));
 		
-		setBounds(0, yPos, 150, 92);
+		setBounds(0, familyMemberYPos, 150, 92);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{73, 0};
 		gridBagLayout.rowHeights = new int[]{16, 16, 23, 0, 0};

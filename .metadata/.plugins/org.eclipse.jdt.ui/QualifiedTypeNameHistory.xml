@@ -12,4 +12,6 @@
 <fullyQualifiedTypeName name="nebulous.tools.DataHandler"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="javax.swing.ScrollPaneConstants"/>
+<fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="nebulous.tools.ImageUtils"/>
 </qualifiedTypeNameHistroy>

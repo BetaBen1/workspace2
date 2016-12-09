@@ -5,3 +5,15 @@
 1481136444796	Rename field 'firstNameLbl'
 1481136455067	Rename field 'lastNameLbl'
 1481139382804	Rename field 'ageLbl'
+1481141324356	Rename field 'firstNameTxt'
+1481141352635	Rename field 'lastNameTxt'
+1481141382289	Rename field 'ageTxt'
+1481141409459	Rename field 'GPATxt'
+1481141458456	Rename field 'scrollPane'
+1481213392784	Rename field 'GPALbl'
+1481213449066	Rename local variable 'scrollPanel'
+1481214174693	Rename field 'submitBtn'
+1481214806540	Rename field 'btnOpenImage'
+1481214852743	Rename field 'imagePanel'
+1481226487505	Copy compilation unit
+1481226715248	Delete element
