@@ -80,7 +80,6 @@ public class Main extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
 			}
 		});
 	}
@@ -179,7 +178,7 @@ public class Main extends JFrame {
 		profileDisplayLbl.setBounds(6, 411, 390, 35);
 		profilePanel.add(profileDisplayLbl);
 		
-		familyDisplayLbl.setBounds(6, 411, 397, 35);
+		familyDisplayLbl.setBounds(6, 413, 397, 35);
 		familyPanel.add(familyDisplayLbl);
 		
 		profileSubmitBtn.setBounds(6, 448, 396, 72);
@@ -197,7 +196,6 @@ public class Main extends JFrame {
 				familySubmit();
 				familyDisplayLbl.setText("Your information was saved.");
 				FamilyMemberPanel panel = new FamilyMemberPanel(familyFirstNameTxt.getText(), familyLastNameTxt.getText(), familyAgeTxt.getText(), familyGPATxt.getText());
-				panel.setForeground(Color.black);
 				familyScrollPanel.add(panel);
 				FamilyMemberPanel.familyMemberYPos += panel.getHeight()+5;
 				familyScrollPanel.repaint();
@@ -234,6 +232,7 @@ public class Main extends JFrame {
 					profileImagePanel.add(profileImageLabel);
 					profileImagePanel.revalidate();
 					profileImagePanel.repaint();
+					DataHandler.save("Profile Image", "./res/text.txt", file.getAbsolutePath());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -246,7 +245,7 @@ public class Main extends JFrame {
 		familyImagePanel.setBounds(33, 185, 153, 192);
 		familyPanel.add(familyImagePanel);
 		
-		familyBtnOpenImage.setBounds(33, 407, 119, 29);
+		familyBtnOpenImage.setBounds(31, 378, 119, 29);
 		familyBtnOpenImage.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -262,6 +261,7 @@ public class Main extends JFrame {
 					familyImagePanel.add(familyImageLabel);
 					familyImagePanel.revalidate();
 					familyImagePanel.repaint();
+					DataHandler.save("Family Member Image", "./res/text.txt", file.getAbsolutePath());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -275,6 +275,7 @@ public class Main extends JFrame {
 		contentPane.add(tabbedPane);
 		
 		load();
+		
 	}
 	
 	public void profileSubmit(){
@@ -302,6 +303,27 @@ public class Main extends JFrame {
 		familyLastNameTxt.setText((String)DataHandler.read("Family Member Last Name", "./res/text.txt"));
 		familyAgeTxt.setText((String)DataHandler.read("Family Member Age", "./res/text.txt"));
 		familyGPATxt.setText((String)DataHandler.read("Family Member GPA", "./res/text.txt"));
+		try{
+	        BufferedImage image = ImageIO.read(new java.io.File((String)DataHandler.read("Profile Image", "./res/text.txt")));
+	        image = ImageUtils.resizeImage(image, profileImagePanel.getWidth() - 4, profileImagePanel.getHeight() - 10);
+	        ImageIcon icon = new ImageIcon(image);
+	        profileImageLabel = new JLabel(icon);
+	        profileImagePanel.add(profileImageLabel);
+	        profileImagePanel.revalidate();
+	        profileImagePanel.repaint();
+	        
+	        BufferedImage familyImage = ImageIO.read(new java.io.File((String)DataHandler.read("Family Member Image", "./res/text.txt")));
+	        familyImage = ImageUtils.resizeImage(familyImage, familyImagePanel.getWidth() - 4, familyImagePanel.getHeight() - 10);
+	        ImageIcon familyIcon = new ImageIcon(familyImage);
+	        familyImageLabel = new JLabel(familyIcon);
+	        familyImagePanel.add(familyImageLabel);
+	        familyImagePanel.revalidate();
+	        familyImagePanel.repaint();
+	        
+	    } catch (Exception e) {
+	    	profileImageLabel = new JLabel("None");
+	        familyImageLabel = new JLabel("None");
+	    }
 	}
 	
 }

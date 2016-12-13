@@ -55,9 +55,5 @@ public class FamilyMemberPanel extends JPanel {
 		gbc_lblAge.gridx = 0;
 		gbc_lblAge.gridy = 3;
 		add(lblAge, gbc_lblAge);
-
-		setVisible(true);
-		
 	}
-
 }
