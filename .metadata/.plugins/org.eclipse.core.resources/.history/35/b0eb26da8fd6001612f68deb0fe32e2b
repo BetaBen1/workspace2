@@ -70,6 +70,9 @@ public class Main extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		Thread thread = new Thread(run());
+		thread.start();
+		
 		display.setBounds(6, 258, 438, 23);
 		contentPane.add(display);
 		
@@ -101,25 +104,23 @@ public class Main extends JFrame {
 		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
 
-		Thread thread = new Thread(){
-			@Override
-			public void run() {
-				while(true){
-					if(textField.getText().isEmpty()){
-						btnSend.setEnabled(false);
-					}
-					else {
-						btnSend.setEnabled(true);
-					}
-				}
-			}
-		};
-		thread.start();
-		
 	}
 	
 	public void write(String data) {
 	    textArea.append(data);
 	}
+	
+	Runnable runnable = new Runnable(){
+		public void run(){
+			while(true){
+				if(textField.getText().isEmpty()){
+					btnSend.setEnabled(false);
+				}
+				else {
+					btnSend.setEnabled(true);
+				}
+			}
+		}
+	};
 	
 }

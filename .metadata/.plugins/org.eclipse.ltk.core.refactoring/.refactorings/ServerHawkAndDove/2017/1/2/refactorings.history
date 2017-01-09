@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;lblNewLabel&apos; in &apos;com.betaben.server.Main&apos; to &apos;display&apos;&#x0A;- Original project: &apos;ServerHawkAndDove&apos;&#x0A;- Original element: &apos;com.betaben.server.Main.lblNewLabel&apos;&#x0A;- Renamed element: &apos;com.betaben.server.Main.display&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;lblNewLabel&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.betaben.server{Main.java[Main^lblNewLabel" name="display" references="true" setter="false" stamp="1483978238619" textual="false" version="1.0"/>
+</session>

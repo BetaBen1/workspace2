@@ -67,13 +67,39 @@ public class Main extends JFrame {
 		textField = new JTextField();
 		textField.setBounds(6, 293, 309, 29);
 		textField.setBorder(new LineBorder(Color.black));
+		textField.addKeyListener(new KeyListener(){
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if(e.getKeyChar() != KeyEvent.VK_ENTER){
+					btnSend.setEnabled(true);
+				}
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	
+		});
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		Thread thread = new Thread(run());
+		thread.start();
 		
 		display.setBounds(6, 258, 438, 23);
 		contentPane.add(display);
 		
 		btnSend.setBounds(327, 294, 117, 29);
+		btnSend.setEnabled(false);
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				if(textField.getText().isEmpty()){
@@ -101,25 +127,20 @@ public class Main extends JFrame {
 		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
 
-		Thread thread = new Thread(){
-			@Override
-			public void run() {
-				while(true){
-					if(textField.getText().isEmpty()){
-						btnSend.setEnabled(false);
-					}
-					else {
-						btnSend.setEnabled(true);
-					}
-				}
-			}
-		};
-		thread.start();
-		
 	}
 	
 	public void write(String data) {
 	    textArea.append(data);
 	}
 	
+	public Runnable run(){
+		if(textField.getText().isEmpty()){
+			btnSend.setEnabled(false);
+			return null;
+		}
+		else {
+			btnSend.setEnabled(true);
+			return null;
+		}
+	}
 }
