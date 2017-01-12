@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -67,8 +65,8 @@ public class Main extends JFrame {
 		textField = new JTextField();
 		textField.setBounds(6, 293, 309, 29);
 		textField.setBorder(new LineBorder(Color.black));
-		contentPane.add(textField);
 		textField.setColumns(10);
+		contentPane.add(textField);
 		
 		display.setBounds(6, 258, 438, 23);
 		contentPane.add(display);
@@ -76,19 +74,12 @@ public class Main extends JFrame {
 		btnSend.setBounds(327, 294, 117, 29);
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				if(textField.getText().isEmpty()){
-					//display.setText("Your message must have content to be sent.");
+				try {
+					client.send("[" + username + "] " +  textField.getText());
+					textField.setText("");
+				} catch (IOException e1) {
+					e1.printStackTrace();
 				}
-				else{
-					//display.setText("Your message was successfully sent.");
-					try {
-						client.send("[" + username + "] " +  textField.getText());
-						textField.setText("");
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
-				}
-
 			}
 		});
 		contentPane.add(btnSend);
