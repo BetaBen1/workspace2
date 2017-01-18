@@ -56,7 +56,7 @@ public class Main extends JFrame {
 	 */
 	public Main() throws Exception {
 		addWindowStateListener(new WindowStateListener(){
-			
+
 			@Override
 			public void windowStateChanged(WindowEvent e) {
 				System.out.println("We noticed a change.");

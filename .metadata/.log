@@ -2225,3 +2225,110 @@ Binding(ALT+COMMAND+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,cocoa,system)
+!SESSION 2017-01-17 11:25:50.761 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Ben/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Ben/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-01-17 11:25:55.512
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-17 11:25:55.839
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2017-01-17 11:25:58.892
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-01-17 11:25:58.893
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@185a0811,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77fb1002,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 10 2017-01-17 11:31:02.629
+!MESSAGE Updating the index from remote failed. ; version: 2.0.1.v20160605-1811
+!STACK 0
+org.apache.lucene.index.IndexNotFoundException: no segments* file found in org.apache.lucene.store.NIOFSDirectory@/private/var/folders/mj/lrkq0lgj4l35jmh8_dq24f5r0000gn/T/1484670662618-0 lockFactory=org.apache.lucene.store.NativeFSLockFactory@7e45046c: files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:712)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:593)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:359)
+	at org.apache.lucene.index.IndexWriter.addIndexes(IndexWriter.java:3132)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory.replaceContent(ServerProblemsHistory.java:197)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory$UpdateIndexJob.run(ServerProblemsHistory.java:295)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2017-01-18 09:33:18.777 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Ben/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Ben/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-18 09:36:30.160
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2017-01-18 09:36:31.491
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-01-18 09:36:31.492
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@383e6734,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@336070ab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2017-01-18 12:06:11.767
+!MESSAGE An error occurred during the org.eclipse.equinox.internal.p2.engine.phases.CheckTrust phase.
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2017-01-18 12:06:11.767
+!MESSAGE session context was:(profile=_Users_Ben_eclipse_java-latest-released_Eclipse.app_Contents_Eclipse, phase=org.eclipse.equinox.internal.p2.engine.phases.CheckTrust, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2017-01-18 12:06:11.767
+!MESSAGE Error reading signed content.
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: /Users/Ben/.p2/pool/plugins/org.eclipse.epp.mpc.core_1.5.3.v20161116-1851.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:317)
+	at org.eclipse.osgi.internal.signedcontent.SignedBundleHook.getSignedContent(SignedBundleHook.java:212)
+	at org.eclipse.equinox.internal.p2.engine.phases.CertificateChecker.checkCertificates(CertificateChecker.java:73)
+	at org.eclipse.equinox.internal.p2.engine.phases.CertificateChecker.start(CertificateChecker.java:54)
+	at org.eclipse.equinox.internal.p2.engine.phases.CheckTrust.completePhase(CheckTrust.java:50)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:251)
+	at org.eclipse.equinox.internal.p2.engine.Phase.perform(Phase.java:101)
+	at org.eclipse.equinox.internal.p2.engine.PhaseSet.perform(PhaseSet.java:47)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:75)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.p2.operations.ProvisioningSession.performProvisioningPlan(ProvisioningSession.java:175)
+	at org.eclipse.equinox.p2.operations.ProfileModificationJob.runModal(ProfileModificationJob.java:79)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:219)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:149)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:163)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:304)
+	... 13 more

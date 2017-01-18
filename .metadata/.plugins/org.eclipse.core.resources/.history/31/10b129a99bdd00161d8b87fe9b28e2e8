@@ -56,10 +56,10 @@ public class Main extends JFrame {
 	 */
 	public Main() throws Exception {
 		addWindowStateListener(new WindowStateListener(){
-			
+
 			@Override
 			public void windowStateChanged(WindowEvent e) {
-				System.out.println("We noticed a change.");
+				
 				try {
 					client.send("[" + username + "] has left the chatroom.");
 				} catch (IOException e1) {
