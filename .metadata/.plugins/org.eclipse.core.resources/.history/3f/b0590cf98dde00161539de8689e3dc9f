@@ -71,13 +71,6 @@ public class Main extends JFrame {
 		String ip = "10.1.15.254";
 		short port = 31415;
 		
-		long totalSeconds = System.currentTimeMillis()/100;
-		System.out.println(totalSeconds);
-		
-		long hours = totalSeconds % 60;
-		int minutes;
-		int seconds;
-		
 		client = new UserClient(new Socket(ip, port), this);
 		client.start();
 		

@@ -71,10 +71,10 @@ public class Main extends JFrame {
 		String ip = "10.1.15.254";
 		short port = 31415;
 		
-		long totalSeconds = System.currentTimeMillis()/100;
+		long totalSeconds = System.currentTimeMillis()/10;
 		System.out.println(totalSeconds);
 		
-		long hours = totalSeconds % 60;
+		int hours;
 		int minutes;
 		int seconds;
 		

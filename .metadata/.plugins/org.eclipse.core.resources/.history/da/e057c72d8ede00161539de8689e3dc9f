@@ -74,7 +74,7 @@ public class Main extends JFrame {
 		long totalSeconds = System.currentTimeMillis()/100;
 		System.out.println(totalSeconds);
 		
-		long hours = totalSeconds % 60;
+		int hours;
 		int minutes;
 		int seconds;
 		
