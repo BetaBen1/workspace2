@@ -47,7 +47,6 @@ public class Main extends JFrame {
 				try {
 					frame = new Main();
 					runWindowActions();
-					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -106,25 +105,6 @@ public class Main extends JFrame {
 		
 		rdbtnDarkMode = new JRadioButton("Dark Mode");
 		rdbtnDarkMode.setSelected(true);
-		rdbtnDarkMode.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				if(rdbtnDarkMode.isSelected()){
-					contentPane.setBackground(Color.lightGray);
-					textArea.setBackground(Color.white);
-					textArea.setForeground(Color.black);
-					textField.setBackground(Color.white);
-					textField.setForeground(Color.black);
-					rdbtnDarkMode.setForeground(Color.black);
-				} else {
-					contentPane.setBackground(Color.black);
-					textArea.setBackground(Color.darkGray);
-					textArea.setForeground(Color.white);
-					textField.setBackground(Color.darkGray);
-					textField.setForeground(Color.white);
-					rdbtnDarkMode.setForeground(Color.white);
-				}
-			}
-		});
 		rdbtnDarkMode.setBounds(0, 229, 100, 23);
 		contentPane.add(rdbtnDarkMode);
 
@@ -160,11 +140,6 @@ public class Main extends JFrame {
 						textField.setBackground(Color.white);
 						textField.setForeground(Color.black);
 						rdbtnDarkMode.setForeground(Color.black);
-					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
 				}
 			}

@@ -19,7 +19,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.JRadioButton;
 
 public class Main extends JFrame {
 
@@ -33,10 +32,16 @@ public class Main extends JFrame {
 	JTextArea textArea = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane();
 	JButton btnSend = new JButton("Send");
-	private final JRadioButton rdbtnDarkMode;
 	
 	private static String username = "BetaBen";
-	
+	/**
+	 * @wbp.nonvisual location=76,11
+	 */
+	private final JButton button = new JButton("New button");
+	/**
+	 * @wbp.nonvisual location=586,71
+	 */
+	private final JButton button_1 = new JButton("New button");
 
 	/**
 	 * Launch the application.
@@ -47,7 +52,6 @@ public class Main extends JFrame {
 				try {
 					frame = new Main();
 					runWindowActions();
-					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -98,35 +102,11 @@ public class Main extends JFrame {
 		
 		contentPane.getRootPane().setDefaultButton(btnSend);
 		
-		scrollPane.setBounds(6, 6, 438, 223);
+		scrollPane.setBounds(6, 6, 438, 240);
 		contentPane.add(scrollPane);
 		
 		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
-		
-		rdbtnDarkMode = new JRadioButton("Dark Mode");
-		rdbtnDarkMode.setSelected(true);
-		rdbtnDarkMode.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				if(rdbtnDarkMode.isSelected()){
-					contentPane.setBackground(Color.lightGray);
-					textArea.setBackground(Color.white);
-					textArea.setForeground(Color.black);
-					textField.setBackground(Color.white);
-					textField.setForeground(Color.black);
-					rdbtnDarkMode.setForeground(Color.black);
-				} else {
-					contentPane.setBackground(Color.black);
-					textArea.setBackground(Color.darkGray);
-					textArea.setForeground(Color.white);
-					textField.setBackground(Color.darkGray);
-					textField.setForeground(Color.white);
-					rdbtnDarkMode.setForeground(Color.white);
-				}
-			}
-		});
-		rdbtnDarkMode.setBounds(0, 229, 100, 23);
-		contentPane.add(rdbtnDarkMode);
 
 		runThread();
 		
@@ -143,28 +123,9 @@ public class Main extends JFrame {
 				while(true){
 					if(textField.getText().isEmpty()){
 						btnSend.setEnabled(false);
-					} else {
+					}
+					else {
 						btnSend.setEnabled(true);
-					}
-					if(rdbtnDarkMode.isSelected()){
-						contentPane.setBackground(Color.black);
-						textArea.setBackground(Color.darkGray);
-						textArea.setForeground(Color.white);
-						textField.setBackground(Color.darkGray);
-						textField.setForeground(Color.white);
-						rdbtnDarkMode.setForeground(Color.white);
-					} else {
-						contentPane.setBackground(Color.lightGray);
-						textArea.setBackground(Color.white);
-						textArea.setForeground(Color.black);
-						textField.setBackground(Color.white);
-						textField.setForeground(Color.black);
-						rdbtnDarkMode.setForeground(Color.black);
-					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
 				}
 			}
@@ -221,4 +182,5 @@ public class Main extends JFrame {
 			
 		});
 	}
+	
 }

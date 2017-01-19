@@ -19,7 +19,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.JRadioButton;
 
 public class Main extends JFrame {
 
@@ -33,10 +32,8 @@ public class Main extends JFrame {
 	JTextArea textArea = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane();
 	JButton btnSend = new JButton("Send");
-	private final JRadioButton rdbtnDarkMode;
 	
 	private static String username = "BetaBen";
-	
 
 	/**
 	 * Launch the application.
@@ -47,7 +44,6 @@ public class Main extends JFrame {
 				try {
 					frame = new Main();
 					runWindowActions();
-					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -62,7 +58,7 @@ public class Main extends JFrame {
 	 */
 	public Main() throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 317);
+		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -75,7 +71,7 @@ public class Main extends JFrame {
 		client.start();
 		
 		textField = new JTextField();
-		textField.setBounds(6, 258, 309, 29);
+		textField.setBounds(6, 293, 309, 29);
 		textField.setBorder(new LineBorder(Color.black));
 		textField.setColumns(10);
 		contentPane.add(textField);
@@ -83,7 +79,7 @@ public class Main extends JFrame {
 		display.setBounds(6, 258, 438, 23);
 		contentPane.add(display);
 		
-		btnSend.setBounds(327, 259, 117, 29);
+		btnSend.setBounds(327, 294, 117, 29);
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				try {
@@ -98,37 +94,13 @@ public class Main extends JFrame {
 		
 		contentPane.getRootPane().setDefaultButton(btnSend);
 		
-		scrollPane.setBounds(6, 6, 438, 223);
+		scrollPane.setBounds(6, 6, 438, 240);
 		contentPane.add(scrollPane);
 		
 		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
-		
-		rdbtnDarkMode = new JRadioButton("Dark Mode");
-		rdbtnDarkMode.setSelected(true);
-		rdbtnDarkMode.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				if(rdbtnDarkMode.isSelected()){
-					contentPane.setBackground(Color.lightGray);
-					textArea.setBackground(Color.white);
-					textArea.setForeground(Color.black);
-					textField.setBackground(Color.white);
-					textField.setForeground(Color.black);
-					rdbtnDarkMode.setForeground(Color.black);
-				} else {
-					contentPane.setBackground(Color.black);
-					textArea.setBackground(Color.darkGray);
-					textArea.setForeground(Color.white);
-					textField.setBackground(Color.darkGray);
-					textField.setForeground(Color.white);
-					rdbtnDarkMode.setForeground(Color.white);
-				}
-			}
-		});
-		rdbtnDarkMode.setBounds(0, 229, 100, 23);
-		contentPane.add(rdbtnDarkMode);
 
-		runThread();
+		
 		
 	}
 	
@@ -143,28 +115,9 @@ public class Main extends JFrame {
 				while(true){
 					if(textField.getText().isEmpty()){
 						btnSend.setEnabled(false);
-					} else {
+					}
+					else {
 						btnSend.setEnabled(true);
-					}
-					if(rdbtnDarkMode.isSelected()){
-						contentPane.setBackground(Color.black);
-						textArea.setBackground(Color.darkGray);
-						textArea.setForeground(Color.white);
-						textField.setBackground(Color.darkGray);
-						textField.setForeground(Color.white);
-						rdbtnDarkMode.setForeground(Color.white);
-					} else {
-						contentPane.setBackground(Color.lightGray);
-						textArea.setBackground(Color.white);
-						textArea.setForeground(Color.black);
-						textField.setBackground(Color.white);
-						textField.setForeground(Color.black);
-						rdbtnDarkMode.setForeground(Color.black);
-					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
 				}
 			}
@@ -221,4 +174,5 @@ public class Main extends JFrame {
 			
 		});
 	}
+	
 }

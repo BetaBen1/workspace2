@@ -162,7 +162,7 @@ public class Main extends JFrame {
 						rdbtnDarkMode.setForeground(Color.black);
 					}
 					try {
-						sleep(50);
+						sleep(100);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

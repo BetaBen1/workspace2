@@ -161,11 +161,6 @@ public class Main extends JFrame {
 						textField.setForeground(Color.black);
 						rdbtnDarkMode.setForeground(Color.black);
 					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
 				}
 			}
 		};

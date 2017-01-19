@@ -47,7 +47,6 @@ public class Main extends JFrame {
 				try {
 					frame = new Main();
 					runWindowActions();
-					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -160,11 +159,6 @@ public class Main extends JFrame {
 						textField.setBackground(Color.white);
 						textField.setForeground(Color.black);
 						rdbtnDarkMode.setForeground(Color.black);
-					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
 				}
 			}

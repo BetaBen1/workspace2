@@ -47,7 +47,6 @@ public class Main extends JFrame {
 				try {
 					frame = new Main();
 					runWindowActions();
-					frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -145,26 +144,6 @@ public class Main extends JFrame {
 						btnSend.setEnabled(false);
 					} else {
 						btnSend.setEnabled(true);
-					}
-					if(rdbtnDarkMode.isSelected()){
-						contentPane.setBackground(Color.black);
-						textArea.setBackground(Color.darkGray);
-						textArea.setForeground(Color.white);
-						textField.setBackground(Color.darkGray);
-						textField.setForeground(Color.white);
-						rdbtnDarkMode.setForeground(Color.white);
-					} else {
-						contentPane.setBackground(Color.lightGray);
-						textArea.setBackground(Color.white);
-						textArea.setForeground(Color.black);
-						textField.setBackground(Color.white);
-						textField.setForeground(Color.black);
-						rdbtnDarkMode.setForeground(Color.black);
-					}
-					try {
-						sleep(50);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
 				}
 			}
