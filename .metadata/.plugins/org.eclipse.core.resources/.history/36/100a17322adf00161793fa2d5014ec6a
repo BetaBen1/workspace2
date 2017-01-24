@@ -6,23 +6,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.event.WindowStateListener;
 import java.io.IOException;
 import java.net.Socket;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.JToolBar;
+import javax.swing.JRadioButton;
 
 public class Main extends JFrame {
 
@@ -32,14 +29,13 @@ public class Main extends JFrame {
 	
 	private JPanel contentPane;
 	private JTextField textField;
+	JLabel display = new JLabel("");
 	JTextArea textArea = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane();
 	JButton btnSend = new JButton("Send");
 	private final JRadioButton rdbtnDarkMode;
 	
 	private static String username = "BetaBen";
-	private static Date date = null;
-	private static DateFormat format = new SimpleDateFormat("HH:mm:ss");
 	
 
 	/**
@@ -75,6 +71,12 @@ public class Main extends JFrame {
 		String ip = "10.1.15.254";
 		short port = 31415;
 		
+		long totalSeconds = System.currentTimeMillis()/100;
+		System.out.println(totalSeconds);
+		
+		long hours = totalSeconds % 60;
+		int minutes;
+		int seconds;
 		
 		client = new UserClient(new Socket(ip, port), this);
 		client.start();
@@ -85,12 +87,14 @@ public class Main extends JFrame {
 		textField.setColumns(10);
 		contentPane.add(textField);
 		
+		display.setBounds(6, 258, 438, 23);
+		contentPane.add(display);
+		
 		btnSend.setBounds(327, 259, 117, 29);
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				try {
-					date = new Date();
-					client.send("[" + username + "] " +  textField.getText() + "		Sent: " + format.format(date).toString());
+					client.send("[" + username + "] " +  textField.getText() + "               Sent at: " + System.currentTimeMillis());
 					textField.setText("");
 				} catch (IOException e1) {
 					e1.printStackTrace();
