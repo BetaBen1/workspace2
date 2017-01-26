@@ -1,0 +1,62 @@
+package betaben.realserverhawkanddove;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+import java.awt.Font;
+
+public class Main extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Main frame = new Main();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Main() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 750, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblLabel = new JLabel("Choose your poison:");
+		lblLabel.setFont(new Font("SF Mono", Font.PLAIN, 24));
+		lblLabel.setBounds(6, 6, 372, 74);
+		contentPane.add(lblLabel);
+		
+		JToggleButton tglbtnHawk = new JToggleButton("Hawk");
+		tglbtnHawk.setBounds(0, 92, 161, 29);
+		contentPane.add(tglbtnHawk);
+		
+		JToggleButton tglbtnDove = new JToggleButton("Dove");
+		tglbtnDove.setBounds(161, 92, 161, 29);
+		contentPane.add(tglbtnDove);
+		
+		JButton btnSend = new JButton("Send");
+		btnSend.setBounds(95, 169, 117, 29);
+		contentPane.add(btnSend);
+	}
+}
