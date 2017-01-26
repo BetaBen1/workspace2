@@ -5,7 +5,6 @@ public class Main {
 	public static void main(String[] args) {
 		
 		f(4, 2);
-		System.out.println(4%2);
 
 	}
 	
