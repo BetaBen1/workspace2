@@ -1,0 +1,11 @@
+package betaben.february2practice;
+
+public class RandomStringChooser {
+
+	private ArrayList<String> 
+	
+	public RandomStringChooser(String[] array){
+		
+	}
+	
+}

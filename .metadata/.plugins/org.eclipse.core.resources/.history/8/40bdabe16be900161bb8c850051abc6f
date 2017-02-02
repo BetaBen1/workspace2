@@ -1,0 +1,13 @@
+package betaben.february2practice;
+
+public class RandomLetterChooser extends RandomStringChooser {
+
+	public RandomLetterChooser(String str){
+		super(array);
+	}
+	
+	public static String[] getSingleLetters(String str){
+		
+	}
+	
+}
