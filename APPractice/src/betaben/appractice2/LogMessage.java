@@ -7,14 +7,25 @@ public class LogMessage {
 	
 	public LogMessage(String message){
 		
-		getMachineId();
-		getDescription();
-		
+		String[] array = message.split(":");
+		this.machineId = array[0];
+		this.description = array[1];
+		System.out.println(machineId);
+		System.out.println(description);
 	}
 	
 	public boolean containsWord(String keyword){
 		
-		if(description.contains(keyword)){ 
+		if(description.startsWith(keyword)){ 
+			return true;
+		}
+		else if(description.startsWith(" " + keyword)){
+			return true;
+		}
+		else if(description.endsWith(keyword)){
+			return true;
+		}
+		else if(description.contentEquals(keyword + " ")){
 			return true;
 		}
 		else{ 

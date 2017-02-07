@@ -6,6 +6,7 @@ import java.util.List;
 public class SystemLog {
 
 	private List<LogMessage> messageList;
+	//private ArrayList<LogMessage> deletedMessageList = new ArrayList<LogMessage>();
 	private ArrayList<LogMessage> theLog = new ArrayList<LogMessage>();
 
 	public List<LogMessage> removeMessages(String keyword){
@@ -17,16 +18,16 @@ public class SystemLog {
 		theLog.add(new LogMessage("SERVER1:write error on disk DSK2"));
 		theLog.add(new LogMessage("Webserver: error on /dev/disk"));
 		
-		messageList = theLog;
+		this.messageList = theLog;
 		
 		for(LogMessage messages : messageList){
 			if(messages.containsWord(keyword)){
+				//deletedMessageList.add(messages);
 				messageList.remove(messages);
 			}
 				
 		}
 		return messageList;
-		
 	}
 	
 }
