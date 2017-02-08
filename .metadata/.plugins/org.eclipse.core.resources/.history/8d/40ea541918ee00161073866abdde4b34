@@ -20,25 +20,13 @@ public class SystemLog {
 		
 		this.messageList = theLog;
 		
-		for(int i = 0; i < theLog.size(); i++){
-			if(theLog.get(i).containsWord(keyword)){
-				deletedMessageList.add(theLog.get(i));
-				messageList.remove(i);
+		for(LogMessage messages : theLog){
+			if(messages.containsWord(keyword)){
+				deletedMessageList.add(messages);
+				messageList.remove(messages);
 			}
+				
 		}
-		
-		System.out.println("Messages Left:\n\n");
-		
-		for(LogMessage messages : messageList){
-			System.out.println(messages.getMachineId() + ":" + messages.getDescription());
-		}
-		
-		System.out.println("\n\nDeleted Messages:\n\n");
-		
-		for(LogMessage messages : deletedMessageList){
-			System.out.println(messages.getMachineId() + ":" + messages.getDescription());
-		}
-		
 		return messageList;
 	}
 	

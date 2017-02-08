@@ -27,8 +27,6 @@ public class SystemLog {
 			}
 		}
 		
-		System.out.println("Messages Left:\n\n");
-		
 		for(LogMessage messages : messageList){
 			System.out.println(messages.getMachineId() + ":" + messages.getDescription());
 		}

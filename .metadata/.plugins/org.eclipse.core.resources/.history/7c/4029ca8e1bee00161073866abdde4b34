@@ -27,15 +27,7 @@ public class SystemLog {
 			}
 		}
 		
-		System.out.println("Messages Left:\n\n");
-		
 		for(LogMessage messages : messageList){
-			System.out.println(messages.getMachineId() + ":" + messages.getDescription());
-		}
-		
-		System.out.println("\n\nDeleted Messages:\n\n");
-		
-		for(LogMessage messages : deletedMessageList){
 			System.out.println(messages.getMachineId() + ":" + messages.getDescription());
 		}
 		

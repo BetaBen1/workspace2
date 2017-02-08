@@ -10,13 +10,15 @@ public class LogMessage {
 		String[] array = message.split(":");
 		this.machineId = array[0];
 		this.description = array[1];
+		System.out.print(machineId);
+		System.out.print(description);
 	}
 	
 	public boolean containsWord(String keyword){
 
 		return description.contains(keyword)
-				&& (description.startsWith(keyword) || description.contains(" " + keyword))
-				&& (description.endsWith(keyword) || description.contains(keyword + " "));
+				&& (description.startsWith(keyword) || description.startsWith(" " + keyword))
+				&& (description.endsWith(keyword) || description.contentEquals(keyword + " "));
 		
 	}
 	

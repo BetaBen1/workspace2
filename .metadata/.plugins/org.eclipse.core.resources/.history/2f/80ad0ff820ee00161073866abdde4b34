@@ -15,7 +15,7 @@ public class LogMessage {
 	public boolean containsWord(String keyword){
 
 		return description.contains(keyword)
-				&& (description.startsWith(keyword) || description.contains(" " + keyword))
+				&& (description.startsWith(keyword) || description.startsWith(" " + keyword))
 				&& (description.endsWith(keyword) || description.contains(keyword + " "));
 		
 	}
