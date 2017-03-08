@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+<classpathentry exported="true" kind="lib" path="/Users/Ben/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.3/f5848caaa3edeedce92361c61c716a1cb33587f/gdx-1.6.3.jar" sourcepath="/Users/Ben/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.6.3/1606d3dacea2ce1d680407c24fa5bb3d108cf12e/gdx-1.6.3-sources.jar"/>
+<classpathentry exported="true" kind="lib" path="/Users/Ben/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.3/82ff2ee784275ae5f49ac942a593c5248b80881b/gdx-box2d-1.6.3.jar" sourcepath="/Users/Ben/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.6.3/b9bf59da34c003fa7b5901f860abac4cd7b8f79/gdx-box2d-1.6.3-sources.jar"/>
+</classpath>
